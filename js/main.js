@@ -1,8 +1,9 @@
 // 
-var promoCode = '';
+var currentAmount= 25;
+var prizeAmount = 0;
+
 var prize;
-var prizeImg = "images/prize.jpg",
-    winnerImg = "images/prizes/winner-jrwebdev.png",
+var winnerImg = "images/prizes/winner-jrwebdev.png",
     loserImg = "images/prizes/loser.png";
 // Store all of the symbols in variables
 var symbol1 = 'images/symbols/logo-html.png',
@@ -43,17 +44,38 @@ function scratch(box) {
     fg: 'images/scratch-foreground.png',
     // The cursor (coin) image
     'cursor': 'url("images/coin1.png") 5 5, default',
-    
-    scratchMove: function (e, percent) {
-      // Show the plain-text promo code and call-to-action when the scratch area is 50% scratched
-      if ((percent > 50) && (promoCode != '')) {
-        $('.promo-container').show();
-        $('body').removeClass('not-selectable');
-        $('.promo-code').html('You are a winner!!! Use code: ' + promoCode);
-      }
-    }
   });
 }
+
+function scratchPrize() {
+  $('#prize').wScratchPad({
+    // the size of the eraser
+    size        : 70,    
+    // the randomized scratch image   
+    bg          : prize,
+    // give real-time updates
+    realtime    : true, 
+    // The overlay image
+    fg          : 'images/scratch-foreground-prize.png',
+    // The cursor (coin) image
+    'cursor': 'url("images/coin1.png") 5 5, default',
+    
+    scratchMove: function (e, percent) {
+      // Show the plain-text dollar amount when the scratch area is 50% scratched
+      if (percent > 500) {
+        // Use jquery to inject the amount current prize amount into the DOM
+        $("#current-amount").append("25");
+        console.log(currentPrize);
+        // Add or subtract the current amount in the wallet dependent on winning or losing, and the amount lost
+        
+      } else {
+        $("#current-prize").append("1");
+        console.log(currentAmount);
+      }
+    }
+ });
+}
+
 function displayBoxes() {
   var ticketSymbols = [];
   for (var i = 0; i < boxes.length; i++) {
@@ -86,39 +108,6 @@ function displayBoxes() {
     prize = loserImg;
     console.log("You are a loser!");
   }
-}
-
-function scratchPrize() {
-  $('#prize').wScratchPad({
-    // the size of the eraser
-    size        : 70,    
-    // the randomized scratch image   
-    bg:  prize,
-    // give real-time updates
-    realtime    : true, 
-    // The overlay image
-    fg: 'images/scratch-foreground-prize.png',
-    // The cursor (coin) image
-    'cursor': 'url("images/coin1.png") 5 5, default',
-    
-    scratchMove: function (e, percent) {
-      // Show the plain-text promo code and call-to-action when the scratch area is 50% scratched
-      if ((percent > 50) && (promoCode != '')) {
-        $('.promo-container').show();
-        $('body').removeClass('not-selectable');
-        $('.promo-code').html('your code is: ' + promoCode);
-      }
-    }
- });
-}
-
-// Old promo code display
-if (selectSymbol == symbol1) {
-    promoCode = 'SCRATCH400';
-  } else if (selectSymbol == symbol2) {
-    promoCode = 'SCRATCH500';
-  } if (selectSymbol == symbol3) {
-    var promoCode = '';
 }
 
  

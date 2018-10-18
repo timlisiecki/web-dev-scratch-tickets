@@ -41,6 +41,27 @@ p {
   height: 50px;
 }
 
+.wallet {
+  margin: 20px 0 0 0;
+  font-size: 28px;
+}
+
+.wallet-amount, .prize-amount {
+  margin-right: auto;
+  margin-left: auto;
+  background-color: gold;
+  background-image: url("../images/brushed-alum-dark.png");
+  border-radius: 15px;
+}
+
+#current-amount {
+  color: green;
+}
+
+#current-prize {
+  color: blue;
+}
+
 .scratchpad {
   width: 100px;
   height: 100px;
@@ -48,7 +69,7 @@ p {
 }
 
 .scratchpad img {
-  padding: 20px;
+  padding: 20%;
   background-color: #ececec;
 }
 
@@ -56,6 +77,7 @@ p {
   width: 300px;
   height: 100px;
   margin:0 auto;
+  border: 5px solid black;
 }
 
 #prize.scratchpad img {
@@ -89,45 +111,5 @@ p {
   margin-top: 50px;
   padding: 25px;
   border: 5px solid gold;
-  background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
-}
-
-@media only screen and (max-width : 480px) {
-  .scratchpad {width:400px;height:396px;}
-  .scratch-container {width:400px !important;}
-}
- 
-/* Custom, iPhone Retina */ 
-@media only screen and (max-width : 320px) {
-  .scratchpad {width:290px;height:287px;}
-  .scratch-container {width:290px !important;}
-}
-
-.promo-container {
-	background:#FFF;
-	border-radius:5px;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	width:450px;
-	padding:20px;
-	margin:0 auto;
-	text-align:center;
-	font-family:'Open Sans', Arial,Sans-serif;
-	color:#333;
-	font-size:16px;
-	margin-top:20px;
-}
-
-.btn {
-  background:#56CFD2;
-  color:#FFF;
-  padding:10px 25px;
-  display:inline-block;
-  margin-top:15px;
-  text-decoration:none;
-  font-weight:600;
-  text-transform:uppercase;
-  border-radius:3px;
-  -moz-border-radius:3px;
-  -webkit-border-radiuss:3px;
+  background-image: url("../images/arabesque.png");
 }
