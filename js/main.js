@@ -2,19 +2,19 @@
 var promoCode = '';
 var prize;
 var prizeImg = "images/prize.jpg",
-    winnerImg = "images/winner.jpg",
-    loserImg = "images/loser.png";
+    winnerImg = "images/prizes/winner-jrwebdev.png",
+    loserImg = "images/prizes/loser.png";
 // Store all of the symbols in variables
-var symbol1 = 'images/logo-html.png',
-    symbol2 = 'images/logo-css.png',
-    symbol3 = 'images/logo-js.png',
-    symbol4 = 'images/cable.png',
-    symbol5 = 'images/computer.png',
-    symbol6 = 'images/keyboard.png',
-    symbol7 = 'images/laptop.png',
-    symbol8 = 'images/mouse.png',
-    symbol9 = 'images/phone.png',
-    symbol10 = 'images/printer.png';
+var symbol1 = 'images/symbols/logo-html.png',
+    symbol2 = 'images/symbols/logo-css.png',
+    symbol3 = 'images/symbols/logo-js.png',
+    symbol4 = 'images/symbols/cable.png',
+    symbol5 = 'images/symbols/computer.png',
+    symbol6 = 'images/symbols/keyboard.png',
+    symbol7 = 'images/symbols/laptop.png',
+    symbol8 = 'images/symbols/mouse.png',
+    symbol9 = 'images/symbols/phone.png',
+    symbol10 = 'images/symbols/printer.png';
 // Store boxes id's each in variable
 var box1 = "#box1",
     box2 = "#box2",
@@ -34,7 +34,7 @@ function scratch(box) {
   console.log(selectSymbol);
   $(box).wScratchPad({
     // the size of the eraser
-    size        : 50,    
+    size        : 30,    
     // the randomized scratch image   
     bg:  selectSymbol,
     // give real-time updates

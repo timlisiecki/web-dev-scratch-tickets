@@ -10,13 +10,10 @@ body {
     background: #353535;
 }
 
-h1 {
-  color: gold;
-  margin-left: 75px;
-}
-
 p {
   color: white;
+  font-weight: 900;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 .ticket-value {
@@ -25,6 +22,14 @@ p {
   left: 0;
   float: left;
   color: white;
+  font-weight: 900;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.title {
+  color: gold;
+  font-weight: 900;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 .instructions {
@@ -55,6 +60,7 @@ p {
 
 #prize.scratchpad img {
   padding: 0;
+  background-color: #ececec;
 }
 
 .scratch-container {
@@ -68,6 +74,8 @@ p {
   padding:  15px;
   background-color: black;
   width: 500px;
+  border-radius: 15px;
+  border: 5px solid gold;
 }
 
 .prize-container {
@@ -78,8 +86,10 @@ p {
 #ticket-container {
   background-color: green;
   width: 750px;
+  margin-top: 50px;
   padding: 25px;
-  border: 3px solid gold;
+  border: 5px solid gold;
+  background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
 }
 
 @media only screen and (max-width : 480px) {
