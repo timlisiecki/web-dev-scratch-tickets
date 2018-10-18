@@ -60,19 +60,19 @@ function scratchPrize() {
     // The cursor (coin) image
     'cursor': 'url("images/coin1.png") 5 5, default',
     
-    scratchMove: function (e, percent) {
-      // Show the plain-text dollar amount when the scratch area is 50% scratched
-      if (percent > 500) {
-        // Use jquery to inject the amount current prize amount into the DOM
-        $("#current-amount").append("25");
-        console.log(currentPrize);
-        // Add or subtract the current amount in the wallet dependent on winning or losing, and the amount lost
+    // scratchMove: function (e, percent) {
+    //   // Show the plain-text dollar amount when the scratch area is 50% scratched
+    //   if (percent > 500) {
+    //     // Use jquery to inject the amount current prize amount into the DOM
+    //     $("#current-amount").append("25");
+    //     console.log(currentPrize);
+    //     // Add or subtract the current amount in the wallet dependent on winning or losing, and the amount lost
         
-      } else {
-        $("#current-prize").append("1");
-        console.log(currentAmount);
-      }
-    }
+    //   } else {
+    //     $("#current-prize").append("1");
+    //     console.log(currentAmount);
+    //   }
+    // }
  });
 }
 
