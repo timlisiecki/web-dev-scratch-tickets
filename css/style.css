@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    background: #353535;
+  background: #353535;
 }
 
 p {
@@ -41,6 +41,11 @@ p {
   height: 50px;
 }
 
+.btn {
+  margin-top: 25px;
+  border-radius: 15px;
+}
+
 .wallet {
   margin: 20px 0 0 0;
   font-size: 28px;
@@ -52,6 +57,10 @@ p {
   background-color: gold;
   background-image: url("../images/brushed-alum-dark.png");
   border-radius: 15px;
+}
+
+#play-again, #reset-game {
+  margin-left: auto;
 }
 
 #current-amount {

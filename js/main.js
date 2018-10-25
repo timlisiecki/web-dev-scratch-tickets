@@ -1,5 +1,5 @@
-// 
-var currentAmount= 25;
+// VARIABLES
+var currentAmount = parseInt(localStorage.myAmount);
 var prizeAmount = 0;
 
 var prize;
@@ -26,8 +26,33 @@ var box1 = "#box1",
 // Store boxes in an array
 var boxes = [ box1, box2, box3, box4, box5, box6 ];
 // Stores symbols in an array
-var symbolArray= [ symbol1, symbol2, symbol3, symbol4, symbol5, symbol6, symbol7,symbol8, symbol9, symbol10 ];
+var symbolArray = [ symbol1, symbol2, symbol3, symbol4, symbol5, symbol6, symbol7,symbol8, symbol9, symbol10 ];
 var selectSymbol; // Makes the empty variable so that each box is a random symbol
+
+// CONDITIONS
+// Resets localStorage to 25 if the player's amount equals 0 or NaN
+if (localStorage.myAmount <= "0" || localStorage.myAmount === "NaN") {
+  localStorage.clear();
+  localStorage.myAmount = "26";
+  location.reload();
+}
+
+// Sets the current amount to 25 dollars in the DOM to start the game
+$("#current-amount").html(currentAmount);
+
+// Play Game Again
+$("#play-again").click(function(){
+  location.reload();
+});
+
+// Reset Game
+$("#reset-game").click(function(){
+  localStorage.clear();
+  localStorage.myAmount = "25";
+  location.reload();
+});
+
+// FUNCTIONS
 
 // Logic when scratching each box. Also populates each box with a random symbol
 function scratch(box) {
@@ -50,7 +75,7 @@ function scratch(box) {
 function scratchPrize() {
   $('#prize').wScratchPad({
     // the size of the eraser
-    size        : 70,    
+    size        : 50,    
     // the randomized scratch image   
     bg          : prize,
     // give real-time updates
@@ -65,11 +90,11 @@ function scratchPrize() {
       if (percent > 50) {
         // If you won, displays winning amount for this card, then adds that to the current amount in wallet
         if (prize === winnerImg) {
-          $("#current-prize").replaceWith("<span id='current-prize'>" + (prizeAmount + 10).toString() + "</span>");
-          $("#current-amount").replaceWith("<span id='current-amount'>" + (currentAmount + 10).toString() + "</span>");
+          $("#current-prize").html((prizeAmount + 10).toString());
+          $("#current-amount").html((currentAmount + 10).toString());
         // If you lose, subtract the ticket value from the current wallet amount
         } else if (prize === loserImg) {
-          $("#current-amount").replaceWith("<span id='current-amount'>" + (currentAmount -1).toString() + "</span>");
+          $("#current-amount").replaceWith("<span id='current-amount'>" + (currentAmount - 1).toString() + "</span>");
         }
       }
     }
@@ -104,12 +129,14 @@ function displayBoxes() {
   if (ticketSymbols.includes("html") && ticketSymbols.includes("css") && ticketSymbols.includes("js")) {
     prize = winnerImg;
     console.log("You are a winner!!");
+    localStorage.myAmount = parseInt(localStorage.myAmount) + 10;
   } else {
     prize = loserImg;
+    localStorage.myAmount = parseInt(localStorage.myAmount) - 1;
     console.log("You are a loser!");
   }
+  console.log(localStorage);
 }
-
  
 displayBoxes();
 scratchPrize();

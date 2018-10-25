@@ -12,7 +12,6 @@
  
 </head>
 <body>
-	<p>To reset game, refresh browser window.</p>
 	<div id="ticket-container" class="container">
 		<div class="ticket-value">
 			<h2>$1</h2>
@@ -74,10 +73,18 @@
 		<div class="container">
 			<div class="row">
 				<div class="wallet-amount col-4">
-					<p>You have $<span id="current-amount">25</span></p>
+					<p>You have $<span id="current-amount"></span></p>
 				</div>
 				<div class="prize-amount col-4">
 					<p>You won $<span id="current-prize">0</span></p>
+				</div>
+			</div>
+			<div class="row">
+				<div id="play-again" class="col-4">
+					<button type="button" class="btn btn-primary btn-lg btn-block">Play Again</button>
+				</div>
+				<div id="reset-game" class="col-4">
+					<button type="button" class="btn btn-danger btn-lg btn-block">Reset Game</button>
 				</div>
 			</div>
 		</div>
