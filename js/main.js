@@ -35,7 +35,7 @@ if (localStorage.myAmount <= "0" || localStorage.myAmount === "NaN") {
   localStorage.clear();
   localStorage.myAmount = "26";
   location.reload();
-}
+} 
 
 // Sets the current amount to 25 dollars in the DOM to start the game
 $("#current-amount").html(currentAmount);
